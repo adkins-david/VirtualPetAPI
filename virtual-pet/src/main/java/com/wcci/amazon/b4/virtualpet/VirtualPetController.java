@@ -35,11 +35,5 @@ import java.util.Optional;
         virtualPetRepository.deleteById(id);
     }
     }
-------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------
-5:51
-package com.example.demo.virtualpet;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-public interface VirtualPetRepository extends JpaRepository<VirtualPet, Long>
+
 
