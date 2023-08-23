@@ -24,7 +24,7 @@ import java.util.Optional;
       @GetMapping("/{id}")
       public VirtualPet getPetById(@PathVariable Long id) {
         return virtualPetRepository.findById(id)
-            .orElseThrow(() -> new PetNotFoundException(id));
+            .orElseThrow(() -> new PetNotFoundException("id"));
     }
       @PostMapping
       public VirtualPet addPet(@RequestBody VirtualPet newPet) {
