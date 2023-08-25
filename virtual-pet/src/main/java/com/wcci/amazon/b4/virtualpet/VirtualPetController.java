@@ -24,13 +24,13 @@ import java.util.Optional;
       public VirtualPetController(VirtualPetRepository virtualPetRepository) {
         this.virtualPetRepository = virtualPetRepository;
       }
-      @GetMapping("/{id}")
+      @GetMapping("/api/pets/{id}")
       /*public Supplier<Throwable> supplier() {*/
       public ResponseEntity<VirtualPet> getPetById(@PathVariable Long id) {
         Optional<VirtualPet>=virtualPetRepository.findById(id);
 
-        if (virtualPet.isPresent()) {
-          return new ResponseEntity<>(virtualPet.get(), HttpStatus.OK);
+        if (VirtualPet.isPresent()) {
+          return new ResponseEntity<>(VirtualPet.get(), HttpStatus.OK);
         }else{
           return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -38,11 +38,11 @@ import java.util.Optional;
             /* .orElseThrow(() -> new PetNotFoundException("id"));*/
       }
     /* } */
-      @PostMapping
+      @PostMapping("/api/pets/{id}")
       public VirtualPet addPet(@RequestBody VirtualPet newPet) {
         return virtualPetRepository.save(newPet);
     }
-      @DeleteMapping("/{id}")
+      @DeleteMapping("/api/pets/{id}")
       public void deletePet(@PathVariable Long id) {
         virtualPetRepository.deleteById(id);
     }
