@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
 public class VirtualPetController {
@@ -42,7 +43,7 @@ public class VirtualPetController {
 
     @PostMapping("/api/pets/add")
     public ResponseEntity<VirtualPet> createVirtualPet(@RequestBody VirtualPet virtualPet) {
-        VirtualPet virtualPets = virtualPetRepository
+        VirtualPet _virtualPets = virtualPetRepository
                 .save(new VirtualPet());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
