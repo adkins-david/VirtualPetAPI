@@ -30,7 +30,7 @@ public class VirtualPetController {
         }
     }
 
-    @GetMapping("/api/pets/")
+    @GetMapping("/main/java/com/wcci/amazon/b4/virtualpet/{id}")
     public ResponseEntity<List<VirtualPet>> getAllVirtualPet() {
         List<VirtualPet> virtualPets = virtualPetRepository.findAll();
 
@@ -41,14 +41,14 @@ public class VirtualPetController {
         }
     }
 
-    @PostMapping("/api/pets/add")
+    @PostMapping("main/java/com/wcci/amazon/b4/virtualpet{id}")
     public ResponseEntity<VirtualPet> createVirtualPet(@RequestBody VirtualPet virtualPet) {
         //List<VirtualPet> virtualPets = virtualPetRepository;
                // VirtualPet.save(new VirtualPet());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/api/pets/{id}")
+    @DeleteMapping("/main/java/com/wcci/amazon/b4/virtualpet/{id}")
       public void deletePet(@PathVariable Long id) {
         virtualPetRepository.deleteById(id);
       }
