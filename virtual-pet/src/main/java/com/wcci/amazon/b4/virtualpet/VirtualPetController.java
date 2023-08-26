@@ -43,8 +43,8 @@ public class VirtualPetController {
 
     @PostMapping("/api/pets/add")
     public ResponseEntity<VirtualPet> createVirtualPet(@RequestBody VirtualPet virtualPet) {
-        List<VirtualPet> virtualPets = virtualPetRepository.addById
-                .save(new VirtualPet());
+        //List<VirtualPet> virtualPets = virtualPetRepository;
+               // VirtualPet.save(new VirtualPet());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
