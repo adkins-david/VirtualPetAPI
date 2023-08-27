@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,11 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
+@RequestMapping
 public class VirtualPetController {
     @Autowired
     VirtualPetRepository virtualPetRepository;
 
-    @GetMapping("/api/pets/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<VirtualPet> getVirtualPet(@PathVariable("id") long id) {
         Optional<VirtualPet> virtualPet = virtualPetRepository.findById(id);
 
